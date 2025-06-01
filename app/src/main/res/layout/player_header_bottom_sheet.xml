@@ -1,148 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_sheet_peek_height"
+    app:cardElevation="2dp"
     android:background="?attr/colorSurface"
-    android:clipChildren="false">
+    app:strokeWidth="0dp">
 
-    <ImageView
-        android:id="@+id/player_header_media_cover_image"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/player_header_media_title_label"
-        style="@style/LabelMedium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@+id/placeholder_left_view"
-        app:layout_constraintStart_toEndOf="@+id/player_header_media_cover_image"
-        app:layout_constraintTop_toTopOf="@+id/player_header_media_cover_image"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_media_artist_label"/>
-
-    <TextView
-        android:id="@+id/player_header_media_artist_label"
-        style="@style/LabelSmall"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/placeholder_left_view"
-        app:layout_constraintStart_toEndOf="@+id/player_header_media_cover_image"
-        app:layout_constraintTop_toBottomOf="@+id/player_header_media_title_label"
-        app:layout_constraintBottom_toBottomOf="@+id/player_header_media_cover_image"/>
-
-    <View
-        android:id="@+id/placeholder_left_view"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toStartOf="@+id/player_header_button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/placeholder_right_view"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/player_header_bookmark_media_button"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_bookmark_sync"
-        android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toStartOf="@+id/player_header_button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/player_header_rewind_media_button"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_replay"
-        android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toStartOf="@+id/player_header_button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ToggleButton
-        android:id="@+id/player_header_button"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/button_play_pause_selector"
-        android:checked="false"
-        android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        android:text=""
-        android:textOff=""
-        android:textOn=""
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toStartOf="@+id/placeholder_right_view"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/player_header_next_media_button"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_skip_next"
-        android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/player_header_fast_forward_media_button"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_forward"
-        android:foreground="?android:attr/selectableItemBackgroundBorderless"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SeekBar
-        android:id="@+id/player_header_seek_bar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="?attr/colorSurface"
-        android:clickable="false"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:thumb="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:clipChildren="false">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/player_header_media_cover_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
+            app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_header_media_title_label"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toStartOf="@+id/player_header_media_controls"
+            app:layout_constraintStart_toEndOf="@+id/player_header_media_cover_image"
+            app:layout_constraintTop_toTopOf="@+id/player_header_media_cover_image"
+            app:layout_constraintBottom_toTopOf="@+id/player_header_media_artist_label"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_header_media_artist_label"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:alpha="0.7"
+            app:layout_constraintEnd_toEndOf="@+id/player_header_media_title_label"
+            app:layout_constraintStart_toStartOf="@+id/player_header_media_title_label"
+            app:layout_constraintTop_toBottomOf="@+id/player_header_media_title_label"
+            app:layout_constraintBottom_toBottomOf="@+id/player_header_media_cover_image"/>
+
+        <LinearLayout
+            android:id="@+id/player_header_media_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/player_header_seek_bar">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/player_header_bookmark_media_button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_bookmark_sync"
+                android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/player_header_rewind_media_button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_replay"
+                android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/player_header_button"
+                style="@style/Widget.Material3.Button.IconButton.Filled"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_play"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/player_header_next_media_button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_skip_next"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/player_header_fast_forward_media_button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_forward"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/player_header_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:trackCornerRadius="2dp"
+            app:trackThickness="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

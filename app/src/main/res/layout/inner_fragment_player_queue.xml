@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
 
     <com.cappielloantonio.tempo.helper.recyclerview.NestedScrollableHost
         android:id="@+id/player_queue_nested_scrollable_recycler_view"
@@ -24,29 +26,40 @@
                     android:id="@+id/player_queue_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+                    android:orientation="vertical"
+                    android:paddingHorizontal="8dp"
+                    android:clipToPadding="false"/>
 
-                <TextView
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/player_clean_queue_button"
-                    style="@style/TitleMedium"
-                    android:layout_width="match_parent"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/player_queue_clean_all_button"/>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/player_queue_clean_all_button"
+                    android:textColor="?attr/colorError"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="?attr/colorError"
+                    app:iconGravity="textStart"/>
 
             </LinearLayout>
+
         </androidx.core.widget.NestedScrollView>
+
     </com.cappielloantonio.tempo.helper.recyclerview.NestedScrollableHost>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/player_shuffle_queue_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:contentDescription="@string/content_description_shuffle_button"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        app:srcCompat="@drawable/ic_shuffle" />
+        android:text="@string/player_queue_shuffle_button"
+        app:icon="@drawable/ic_shuffle"
+        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
